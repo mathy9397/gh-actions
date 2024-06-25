@@ -23,4 +23,6 @@ jobs:
     steps:
       - name: Show OS
         shell: bash
-        run: "This job is running on a MacOS runner."
+        run: |
+          echo "This job is running on a MacOS runner."
+          echo "Runner OS: $RUNNER_OS"
