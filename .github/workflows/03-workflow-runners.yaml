@@ -22,4 +22,5 @@ jobs:
     runs-on: macos-latest
     steps:
       - name: Show OS
+        shell: bash
         run: "This job is running on a MacOS runner."
