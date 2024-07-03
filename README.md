@@ -1,2 +1,2 @@
 # gh-actions-hub
-github actions.
+github actions. Update to check closed PR actions.
