@@ -40,8 +40,9 @@ jobs:
           MY_WORKFLOW_VAR: 'step'
         run: |
           echo "Env variable: ${{ env.MY_WORKFLOW_VAR }}"
-#      - name: Print env variables-3
-#        env:
-#          MY_WORKFLOW_VAR: 'step'
-#        run: |
-#          echo "Env variable: $env.MY_WORKFLOW_VAR"
+  echo-data2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print env variables-3
+        run: |
+          echo "Env variable: $MY_WORKFLOW_VAR"
