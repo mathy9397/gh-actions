@@ -7,6 +7,7 @@ on:
 env:
   WORKFLOW_VAR: 'I am a workflow env var'
   OVERWRITTEN: 'I will be overwritten'
+  UNDEFINED_VAR_WITH_DEFAULT: ${{ vars.undefined_var || 'default value' }}
 
 jobs:
   echo:
@@ -53,3 +54,9 @@ jobs:
       - name: Print staging Variables
         run: |
           echo "Prod var: ${{ vars.TARGET_VAR }}"
+  echo-undefined:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print undefined Variables
+        run: |
+          echo "${{ env.UNDEFINED_VAR_WITH_DEFAULT }}"
