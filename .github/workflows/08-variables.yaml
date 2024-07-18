@@ -46,3 +46,10 @@ jobs:
         run: |
           echo "Prod var: ${{ vars.TARGET_VAR }}"
           echo "Prod var: ${{ vars.OVERWRITTEN_VAR }}"
+  echo-staging:
+    runs-on: ubuntu-latest
+    environment: staging
+    steps:
+      - name: Print staging Variables
+        run: |
+          echo "Prod var: ${{ vars.TARGET_VAR }}"
