@@ -5,7 +5,7 @@ on:
     inputs:
       dry-run:
         type: boolean
-        default: false
+        default: true
         description: Skip deployment and only print build output
       target:
         type: environment
@@ -31,8 +31,8 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - build
-    if: ${{ !inputs.dry-run }}
     environment: ${{ inputs.target }}
+    if: ${{ !inputs.dry-run }}
     steps:
       - name: Deploy
         run: |
